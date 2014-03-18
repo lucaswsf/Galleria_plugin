@@ -1,21 +1,21 @@
 <?php
-add_action( 'init', 'register_projets', 10 );
+add_action( 'init', 'register_galleries', 10 );
 
-function register_projets() {
-  register_post_type( "projet", array (
+function register_galleries() {
+  register_post_type( "galleries", array (
     'labels' => 
     array (
-      'name' => 'Projets',
-      'singular_name' => 'Projet',
+      'name' => 'Galleries',
+      'singular_name' => 'Galleries',
       'add_new' => 'Ajouter',
-      'add_new_item' => 'Ajouter un projet',
-      'edit_item' => 'Modifier le projet',
-      'new_item' => 'Nouvelle entrée',
-      'view_item' => 'Voir le projet',
-      'search_items' => 'Chercher une entrée',
-      'not_found' => 'Aucune entrée trouvée',
-      'not_found_in_trash' => 'Aucune entrée trouvée dans la corbeille',
-      'parent_item_colon' => 'Entrée parente:',
+      'add_new_item' => 'Ajouter une gallerie',
+      'edit_item' => 'Modifier la gallerie',
+      'new_item' => 'Nouvelle image',
+      'view_item' => 'Voir la gallerie',
+      'search_items' => 'Chercher une image',
+      'not_found' => 'Aucune image trouvée',
+      'not_found_in_trash' => 'Aucune image trouvée dans la corbeille',
+      'parent_item_colon' => 'Image parente:',
     ),
     'description' => '',
     'publicly_queryable' => true,
@@ -26,13 +26,13 @@ function register_projets() {
     'hierarchical' => false,
     'rewrite' => 
     array (
-      'slug' => 'projet',
+      'slug' => 'gallerie',
       'with_front' => true,
       'pages' => true,
-      'feeds' => 'projets',
+      'feeds' => 'galleries',
     ),
-    'has_archive' => 'projets',
-    'query_var' => 'projet',
+    'has_archive' => 'galleries',
+    'query_var' => 'gallerie',
     'supports' => 
     array (
       0 => 'title',

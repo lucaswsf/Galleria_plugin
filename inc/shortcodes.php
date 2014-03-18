@@ -1,24 +1,42 @@
 <?php
-class wsf_shortcode {
+class galleria_shortcode {
   function __construct() {
-    add_shortcode( 'wsf-date', array( $this, 'shortcode_date' ) );
-    add_shortcode( 'wsf-projects-list', array( $this, 'shortcode_projects_list' ) );
+    add_shortcode( 'galleria', array( $this, 'shortcode_galleria' ) );
+    add_shortcode( 'wsf-galleries-list', array( $this, 'shortcode_galleries_list' ) );
   }
 
-  function shortcode_date( $atts ) {
+  function shortcode_galleria( $atts ) {
     extract( shortcode_atts( array(
-      'format' => 'd/m/Y',
-      'before' => '',
-      'after' => ''
+      'gallery_id' => 0,
     ), $atts ) );
-    return "<p>" . $before . date( $format ) . $after . "</p>";
+
+    $galleria_repeater = get_field( 'galleria', $gallery_id );
+    
+    if ( empty( $galleria_repeater ) || !is_array( $galleria_repeater ) ) {
+      return false;
+    } 
+    
+    $return = '';
+    $return .= '<div class="galleria" id="galleria">';
+        $return .= '<div class="galleria-list">';
+        foreach( $galleria_repeater as $image ) {
+              $return .= '<p>' . $image['titre'] . '</p>';
+              $return .= '<a href="' . $image['image']['sizes']['large'] . '"><img src="' . $image['image']['sizes']['medium'] . '" /></a>';
+              $return .= '<p>' . $image['description'] . '</p>';
+        }
+        $return .= "</div>";
+      $return .= "</div>";
+    return $return;
   }
 
-  function shortcode_projects_list() {
+  function shortcode_galleries_list( $atts ) {
+   extract( shortcode_atts( array(
+      'number' => 3,
+    ), $atts ) );
     $current_author = get_the_author_meta( 'ID' );
     $project_query = new WP_Query( array(
-        'post_type' => 'projet',
-        'posts_per_page' => 3,
+        'post_type' => 'gallery',
+        'posts_per_page' => $number,
         'orderby' => 'rand',
         'author' => $current_author
     ) );
@@ -28,21 +46,16 @@ class wsf_shortcode {
     }
 
     ?>
-    <h3>D'autres projets</h3>
+    <h3>D'autres galleries</h3>
     <ul>
       <?php while ( $project_query->have_posts() ) : 
         $project_query->the_post(); ?>
-        <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+        <li>
+          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        </li>
       <?php endwhile; ?>
     </ul>
 
     <?php
   }
-
-
-
-
-
-
-
 }
