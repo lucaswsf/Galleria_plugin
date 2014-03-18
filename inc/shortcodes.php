@@ -17,7 +17,7 @@ class galleria_shortcode {
     } 
     
     $return = '';
-    $return .= '<div class="galleria" id="galleria">';
+    $return .= '<div class="galleria">';
         $return .= '<div class="galleria-list">';
         foreach( $galleria_repeater as $image ) {
               $return .= '<p>' . $image['titre'] . '</p>';
