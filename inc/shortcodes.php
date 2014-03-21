@@ -17,7 +17,7 @@ class galleria_shortcode {
     } 
     
     $return = '';
-    $return .= '<div class="galleria">';
+    $return .= '<div class="galleria" style="height:460px">';
         $return .= '<div class="galleria-list">';
         foreach( $galleria_repeater as $image ) {
               $return .= '<p>' . $image['titre'] . '</p>';
@@ -26,6 +26,13 @@ class galleria_shortcode {
         }
         $return .= "</div>";
       $return .= "</div>";
+      $return .= '<script type="text/javascript">
+          Galleria.loadTheme(\'' . GALLERIA_URL . 'lib/galleria/theme/classic/galleria.classic.min.js\'); 
+          jQuery(\'.galleria\').galleria({
+              width: 700,
+              height: 467 //--I made heights match
+          });
+          </script>';
     return $return;
   }
 

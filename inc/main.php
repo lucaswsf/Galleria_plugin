@@ -24,7 +24,7 @@ class galleria_main {
       GALLERIA_URL . 'lib/galleria/galleria-1.3.5.min.js' , 
       array( 'jquery' ), 
       '1.0.0', 
-      true
+      false
     );
 
     wp_enqueue_script( 
@@ -32,16 +32,16 @@ class galleria_main {
       GALLERIA_URL . 'lib/galleria/theme/classic/galleria.classic.min.js' , 
       array( 'jquery','galleria' ), 
       '1.0.0', 
-      true
+      false
     );
 
-    wp_enqueue_script( 
+    /*wp_enqueue_script( 
       'galleria-main', 
       GALLERIA_URL . 'js/galleria-main.js' , 
       array( 'jquery','galleria','galleria.classic' ), 
       '1.0.0', 
       true
-    );
+    );*/
   }
 }
 
