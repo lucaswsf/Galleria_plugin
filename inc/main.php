@@ -18,7 +18,7 @@ class galleria_main {
        '1.0.0',
        'all'
     );
-    
+
     wp_enqueue_script( 
       'galleria', 
       GALLERIA_URL . 'lib/galleria/galleria-1.3.5.min.js' , 
@@ -44,6 +44,7 @@ class galleria_main {
     );
   }
 }
+
 
 
     
