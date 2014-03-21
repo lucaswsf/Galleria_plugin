@@ -5,11 +5,6 @@ class galleria_main {
     add_action( 'init', array( $this, 'enqueue' ), 30 );
   }
 
-  function image_sizes() {
-    add_theme_support( 'post-thumbnails' );
-    add_image_size( 'slider_thumb', '100', '100', true ); 
-  }
-
   function enqueue() {
     wp_enqueue_style(
       'galleria',
