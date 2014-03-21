@@ -35,7 +35,7 @@ class galleria_main {
       true
     );
 
-    wp_enqueue_style( 
+    wp_enqueue_style(
       'galleria',
        WSF_PORTFOLIO_URL . 'lib/galleria/theme/classic/galleria.classic.css',
        false,
@@ -44,3 +44,6 @@ class galleria_main {
     );
   }
 }
+
+
+    

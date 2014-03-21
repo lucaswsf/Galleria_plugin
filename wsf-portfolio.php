@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: WSF - Portfolio
-Plugin URI: http://wsf.fr
-Description: Plugin perso 
-Author: Lucas, Jean-Philippe, Nicolas
-Version: 1.0
-Author URI: http:moi.com
+Plugin Name: Galleria for Wordpress
+Plugin URI: http://galleria-wp.fr
+Description: Galleria is a JavaScript image gallery framework that simplifies the process of creating beautiful image galleries for the web and mobile devices. 
+Author: Lucas Marot, Jean-Philippe Brou, Nicolas Rabrenovic
+Version: 1.1
+Author URI: http:lucasmarot.fr
 */
 
 // Plugin Constants
