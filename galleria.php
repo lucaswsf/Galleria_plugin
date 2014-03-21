@@ -9,14 +9,14 @@ Author URI: http:lucasmarot.fr
 */
 
 // Plugin Constants
-define( 'WSF_PORTFOLIO_URL', plugin_dir_url(__FILE__) );
-define( 'WSF_PORTFOLIO_DIR', plugin_dir_path( __FILE__ ));
+define( 'GALLERIA_URL', plugin_dir_url( __FILE__ ) );
+define( 'GALLERIA_DIR', plugin_dir_path( __FILE__ ));
 
 // Classes
-require_once( WSF_PORTFOLIO_DIR . 'inc/cpt.php');
-require_once( WSF_PORTFOLIO_DIR . 'inc/fields.php');
-require_once( WSF_PORTFOLIO_DIR . 'inc/shortcodes.php');
-require_once( WSF_PORTFOLIO_DIR . 'inc/main.php');
+require_once( GALLERIA_DIR . 'inc/cpt.php');
+require_once( GALLERIA_DIR . 'inc/fields.php');
+require_once( GALLERIA_DIR . 'inc/shortcodes.php');
+require_once( GALLERIA_DIR . 'inc/main.php');
 
 new galleria_shortcode();
 new galleria_main();

@@ -13,7 +13,7 @@ class galleria_main {
   function enqueue() {
     wp_enqueue_script( 
       'galleria', 
-      WSF_PORTFOLIO_URL . 'lib/galleria/galleria-1.3.5.min.js' , 
+      GALLERIA_URL . 'lib/galleria/galleria-1.3.5.min.js' , 
       array( 'jquery' ), 
       '1.0.0', 
       true
@@ -21,7 +21,7 @@ class galleria_main {
 
     wp_enqueue_script( 
       'galleria.classic', 
-      WSF_PORTFOLIO_URL . 'lib/galleria/theme/classic/galleria.classic.min.js' , 
+      GALLERIA_URL . 'lib/galleria/theme/classic/galleria.classic.min.js' , 
       array( 'jquery','galleria' ), 
       '1.0.0', 
       true
@@ -29,7 +29,7 @@ class galleria_main {
 
     wp_enqueue_script( 
       'galleria-main', 
-      WSF_PORTFOLIO_URL . 'js/galleria-main.js' , 
+      GALLERIA_URL . 'js/galleria-main.js' , 
       array( 'jquery','galleria','galleria.classic' ), 
       '1.0.0', 
       true
@@ -37,7 +37,7 @@ class galleria_main {
 
     wp_enqueue_style(
       'galleria',
-       WSF_PORTFOLIO_URL . 'lib/galleria/theme/classic/galleria.classic.css',
+       GALLERIA_URL . 'lib/galleria/theme/classic/galleria.classic.css',
        false,
        '1.0.0',
        'all'

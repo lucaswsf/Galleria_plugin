@@ -2,7 +2,7 @@
 class galleria_shortcode {
   function __construct() {
     add_shortcode( 'galleria', array( $this, 'shortcode_galleria' ) );
-    add_shortcode( 'wsf-galleries-list', array( $this, 'shortcode_galleries_list' ) );
+    add_shortcode( 'galleries_list', array( $this, 'shortcode_galleries_list' ) );
   }
 
   function shortcode_galleria( $atts ) {
