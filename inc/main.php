@@ -11,6 +11,14 @@ class galleria_main {
   }
 
   function enqueue() {
+    wp_enqueue_style(
+      'galleria',
+       GALLERIA_URL . 'lib/galleria/theme/classic/galleria.classic.css',
+       false,
+       '1.0.0',
+       'all'
+    );
+    
     wp_enqueue_script( 
       'galleria', 
       GALLERIA_URL . 'lib/galleria/galleria-1.3.5.min.js' , 
@@ -33,14 +41,6 @@ class galleria_main {
       array( 'jquery','galleria','galleria.classic' ), 
       '1.0.0', 
       true
-    );
-
-    wp_enqueue_style(
-      'galleria',
-       GALLERIA_URL . 'lib/galleria/theme/classic/galleria.classic.css',
-       false,
-       '1.0.0',
-       'all'
     );
   }
 }
