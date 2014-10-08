@@ -1,7 +1,6 @@
 <?php
 class galleria_main {
   function __construct() {
-    add_action('init', array( $this, 'image_sizes' ), 40 );
     add_action( 'init', array( $this, 'enqueue' ), 30 );
   }
 
